@@ -1,7 +1,32 @@
-import React              from 'react';
-import { connect }        from 'react-redux';
-import { fetchShipments } from '../../actions';
-import StyledCard         from '../Commen/Cards';
+import React                from 'react';
+import { connect }          from 'react-redux';
+import { fetchShipments }   from '../../actions';
+import StyledCard           from '../Commen/Cards';
+import styled               from 'styled-components';
+
+const StyledCardWrapper = styled.section`
+	&& .card {
+		border-radius: 0;
+		-webkit-box-shadow: 0 1px 3px 0 #efefef, 0 0 0 1px #efefef;
+		box-shadow: 0 1px 3px 0 #efefef, 0 0 0 1px #efefef;
+		padding: 5px;
+	}
+	
+	&& .card .content .description {
+	  padding-top: 20px;
+    padding-bottom: 20px;
+	}
+	
+	&& .ui.card>.content p,
+	.ui.cards>.card>.content p{
+		margin-bottom: 3px;
+	}
+`;
+
+const StyledPageTitle = styled.h1`
+	padding-top: 0.5em;
+	margin-bottom: 1.5em;
+`;
 
 class ListShipments extends React.Component {
 	componentDidMount() {
@@ -26,10 +51,10 @@ class ListShipments extends React.Component {
 	render() {
 		return (
 				<section>
-					<h1>Load Board</h1>
-					<div className='ui cards three stackable'>
+					<StyledPageTitle>Load Board</StyledPageTitle>
+					<StyledCardWrapper className='ui cards three stackable'>
 						{ this.renderShipmentList() }
-					</div>
+					</StyledCardWrapper>
 				</section>
 		);
 	}

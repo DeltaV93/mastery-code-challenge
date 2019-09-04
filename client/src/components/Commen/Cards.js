@@ -1,10 +1,17 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
+import styled   from 'styled-components';
+
+const StyledStatus = styled.div`
+&&.book-status {
+	text-transform: capitalize;
+	}
+`;
 
 const renderBtn = ( locked ) => {
 	if ( !locked && locked !== undefined ) {
 		return (
-				<div className='ui label'>
+				<div className='ui basic label'>
 					<i className='icon edit'/>
 					Can Edit Status
 				</div>
@@ -21,9 +28,9 @@ const StyledCard = ( { data: { id, origin, destination, date, status, locked }, 
 						<div className={ `ui mini ${ statusColor } button` }>
 							Status
 						</div>
-						<a className={ `ui basic left pointing ${ statusColor } label` }>
+						<StyledStatus className={ `ui book-status basic left ${ statusColor } label` }>
 							{ status }
-						</a>
+						</StyledStatus>
 					</div>
 				</div>
 
@@ -33,17 +40,17 @@ const StyledCard = ( { data: { id, origin, destination, date, status, locked }, 
 						<div className='six'>
 							<div className='item'>
 								<div>
-									<p><strong>Origin: </strong>{ origin }</p>
+									<p><strong className='header black'>Origin: </strong>{ origin }</p>
 								</div>
 							</div>
 							<div className='item'>
 								<div>
-									<p><strong>Destination: </strong>{ destination }</p>
+									<p><strong className='header black'>Destination: </strong>{ destination }</p>
 								</div>
 							</div>
 							<div className='item'>
 								<div>
-									<p><strong>Date: </strong>{ date }</p>
+									<p><strong className='header black'>Date: </strong>{ date }</p>
 								</div>
 							</div>
 						</div>
@@ -54,7 +61,7 @@ const StyledCard = ( { data: { id, origin, destination, date, status, locked }, 
 				<span className='left floated like'>
 					{ renderBtn( locked, id ) }
 				</span>
-						<span className='right floated star'>
+				<span className='right floated star'>
 							<Link className='ui button black mini'
 										to={ `shipments/${ id }` }>View { !locked ? '/ Edit' : '' }</Link>
 				</span>
