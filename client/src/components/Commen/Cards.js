@@ -16,9 +16,9 @@ const StyledCard = ( { data: { id, origin, destination, date, status, locked }, 
 		<div className='ui card'>
 			<div className='content'>
 				<div className='right floated'>
-					<div className='ui labeled button'
+					<div className='ui labeled mini button'
 							 tabIndex='0'>
-						<div className={ `ui ${ statusColor } button` }>
+						<div className={ `ui mini ${ statusColor } button` }>
 							Status
 						</div>
 						<a className={ `ui basic left pointing ${ statusColor } label` }>
