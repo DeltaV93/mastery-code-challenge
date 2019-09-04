@@ -39,13 +39,13 @@ class StreamShow extends React.Component {
 
 		return (
 				<div>
-					<i className=' icon truck'></i> Load ID: { id }
+					<i className=' icon truck'/> Load ID: { id }
 				</div>
 		);
 
 	}
 
-	renderStatusSection( lockStatus ) {
+	renderStatusSection( lockStatus, status ) {
 		if ( !lockStatus ) {
 			return (
 					<div>
@@ -58,6 +58,7 @@ class StreamShow extends React.Component {
 					</div>
 			);
 		}
+		return <div>{status}</div>
 	}
 
 	renderContent() {
@@ -67,6 +68,7 @@ class StreamShow extends React.Component {
 		}
 
 		const {
+			id,
 			origin,
 			destination,
 			date,
@@ -77,39 +79,51 @@ class StreamShow extends React.Component {
 		} = this.props.shipments;
 		return (
 
-				<div className='ui center icon'>
-					<h2 className='header center align'>Shipment Information</h2>
+				<div>
+					<h2 className='ui header'>
+						<i className='circular truck icon'/>
+						<div className='content'>
+							Shipment ID: { id }
+						</div>
+					</h2>
+					<div className='ui divider'/>
 					<div>
-						<div className='ui'>
-							<div className='ui grid list'>
-								<div className='eight wide column'>
+
+						<div className='ui grid'>
+							<div className='eight wide column eight'>
+								<div className=' ui  list '>
 									<div className='item'>
-										<p><strong className='header'>Origin Location</strong></p>
-										{ origin }
+										<h4 className='sub header'>Origin Location</h4>
+										<span>{ origin }</span>
 									</div>
 									<div className='item'>
-										<p><strong className='header'>Destination</strong></p>
-										{ destination }
+										<h4 className='sub header'>Shipment Date</h4>
+										<span>{ date }</span>
 									</div>
 									<div className='item'>
-										<p><strong className='header'>Shipment Date</strong></p>
-										{ date }
+										<h4 className='sub header'>Shipment Value</h4>
+										<span>
+											<NumberFormat value={ value }
+																		displayType={ 'text' }
+																		thousandSeparator={ true }
+																		prefix={ '$' }/>
+										</span>
+
 									</div>
 								</div>
-								<div className='eight wide column'>
+							</div>
+							<div className='eight wide column eight'>
+								<div className=' ui  list '>
 									<div className='item'>
-										<p><strong className='header'>Shipment Value</strong></p>
-										<NumberFormat value={ value }
-																	displayType={ 'text' }
-																	thousandSeparator={ true }
-																	prefix={ '$' }/>
+										<h4 className='sub header'>Destination</h4>
+										<span>{ destination }</span>
 									</div>
 									<div className='item'>
-										<p><strong className='header'>Equipment</strong></p>
-										{ equipment }
+										<h4 className='sub header'>Equipment</h4>
+										<span>{ equipment }</span>
 									</div>
 									<div className='item'>
-										<p><strong className='header'>Shipping status</strong></p>
+										<h4 className='sub header'>Shipping status</h4>
 										{ this.renderStatusSection( locked, status ) }
 									</div>
 								</div>
