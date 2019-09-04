@@ -38,11 +38,11 @@ npm 5.2+
 ```
 
 ### Project Built With
-- ReactJS
-- Redux
-- Styled-Components
-- Semantic UI
-- Loadash
+- ReactJS (Framework that a large number of people know, so building a team that knows this framework will be easy. Also has a large community so additional support is always out there)
+- Redux (Set up the redux store during this build so as the app advices, it's just a matter of adding to the store)
+- Styled-Components (Styling components this way keeps people in the mindset of component based applications)
+- Semantic UI (Simple UI framework that makes building UI quick and easy)
+- Loadash (Helped removed some of the complex functions required to make things work)
 
 ### Available Scripts - 📂Client
 
