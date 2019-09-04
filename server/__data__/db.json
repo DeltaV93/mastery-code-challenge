@@ -8,7 +8,7 @@
       "value": 110000,
       "equipment": "V",
       "locked": false,
-      "status": "booked"
+      "status": "available"
     },
     {
       "id": "0002",
