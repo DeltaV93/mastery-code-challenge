@@ -130,7 +130,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 
 ## Contributing 
-- Fork it (https://github.com/deltav93/react-weather-app/fork)
+- Fork it (https://github.com/DeltaV93/mastery-code-challenge/fork)
 - Create your feature branch (git checkout -b feature/fooBar)
 - Commit your changes (git commit -am 'Add some fooBar')
 - Push to the branch (git push origin feature/fooBar)
